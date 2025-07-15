@@ -67,17 +67,18 @@ frontend/
 
 1. Autenticación de usuarios (cargados en memoria):
 
-```
-ROLE_ADMIN = usr: admin / pass: admin123 --> Puede acceder a página de administrator `gestion.html`
-ROLE_USER = usr: user / pass: user123 --> Solo para poder comprar en la página principal `index.html`
-```
+
+**ROLE_ADMIN** = usr: **admin** / pass: **admin123** --> Puede acceder a página de administrator `gestion.html`
+
+**ROLE_USER** = usr: **user** / pass: **user123** --> Solo para poder comprar en la página principal `index.html`
+
 
 2. Crear el archivo `.env` en la raíz del proyecto backend con:
 
 ```dotenv
 SPRING_DATASOURCE_PASSWORD=root
 SPRING_DATASOURCE_USER=root
-SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3307/techlabdb?useSSL=false&serverTimezone=UTC
+SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/techlabdb?useSSL=false&serverTimezone=UTC
 ```
 
 
