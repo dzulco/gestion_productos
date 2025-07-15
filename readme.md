@@ -65,10 +65,11 @@ frontend/
 
 ## 🔐 Configuración de seguridad y BD
 
-1. Autenticación de usuarios:
+1. Autenticación de usuarios (cargados en memoria):
+
 ```
-ROLE_ADMIN = admin / pass: admin123 --> Puede acceder a página de administrator `gestion.html`
-ROLE_USER = user / pass: user123 --> Solo para poder comprar en la página principal `index.html`
+ROLE_ADMIN = usr: admin / pass: admin123 --> Puede acceder a página de administrator `gestion.html`
+ROLE_USER = usr: user / pass: user123 --> Solo para poder comprar en la página principal `index.html`
 ```
 
 2. Crear el archivo `.env` en la raíz del proyecto backend con:
@@ -78,15 +79,6 @@ SPRING_DATASOURCE_PASSWORD=root
 SPRING_DATASOURCE_USER=root
 SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3307/techlabdb?useSSL=false&serverTimezone=UTC
 ```
-
-3. Tu `application.properties` debe leer esas variables, por ejemplo:
-
-```properties
-spring.datasource.url=${SPRING_DATASOURCE_URL}
-spring.datasource.username=${SPRING_DATASOURCE_USER}
-spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
-```
-
 
 
 
@@ -135,6 +127,14 @@ cd backend
 # Frontend
 cd ../frontend
 # abre index.html o usa un live server
+
+# Funcionalidad
+1. Logearse como administrador con credenciales mencionadas arribas
+ [Master data -> productos/clientes se generan por código cada vez que se corre el sistema
+ Transcional data -> órdenes se generan por cada compra generada en order/order_line]
+4. Para generar una orden de compra -> ir al `index.html`, agregar en el carrito y luego comprar
+5. Para visualizar ordenes generadas -> ir a `gestion.html` opción ordenes
+6. Ahí se puede operar sobre `PRODUCTOS` y `ORDENES` con operacion CRUD
 ```
 
 ---
