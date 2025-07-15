@@ -11,9 +11,9 @@ Proyecto de e‑commerce básico construido con **Java 21 / Spring Boot 3** (
  
 - Endpoints REST para **Product**, **Order** y **Client**
 - Seguridad con Spring Security (HTTP Basic)
-- DTOs para exponer entidades
-- Validación de stock y errores claros (HTTP 409, 422 …)
-- Persistencia MySQL
+- DTOs para exponer entidades ( request y response - uso de Records, mapper)
+- Validación de stock y errores claros (Http status code, global advice excepcions)
+- Persistencia MySQL (con JPA)
 - Documentación con Swagger UI (`/swagger-ui.html`)
 
 
@@ -84,6 +84,50 @@ SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3307/techlabdb?useSSL=false&serverT
 
 ---
 
+
+
+## 🛠️ Pasos para correr en local
+
+### 🔙 Backend
+
+```bash
+cd backend
+./mvnw spring-boot:run  # Requiere JDK 21
+```
+
+### 🌐 Frontend
+
+```bash
+cd ../frontend
+```
+
+Abrir `index.html` directamente en el navegador o utilizar una extensión como **Live Server** (por ejemplo, en VS Code) para facilitar el desarrollo.
+
+---
+
+## 🚀 Como usar la aplicación
+
+1. 🔐 Iniciar sesión como **administrador** usando las credenciales mencionadas más arriba.
+
+2. 🧪 **Datos de prueba**:
+   - **Master data** (📦 productos y 👤 clientes) se generan automáticamente cada vez que se inicia el sistema.
+   - **Transactional data** (🧾 órdenes y 📄 líneas de orden) se crean por cada compra realizada desde el frontend.
+
+3. 🛒 Para **realizar una compra**:
+   - Abrir `index.html`.
+   - Agregar productos al carrito.
+   - Hacer clic en **Comprar**.
+
+4. 📋 Para **visualizar las órdenes generadas**:
+   - Abrir `gestion.html`.
+   - Ir a la sección de **Órdenes**.
+
+5. ⚙️ Desde `gestion.html` se pueden realizar operaciones **CRUD** sobre:
+   - `PRODUCTOS`
+   - `ORDENES`
+
+---
+
 ## 🧪 Ejemplos de endpoints
 
 ### `GET /api/v1/products`
@@ -109,6 +153,7 @@ SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3307/techlabdb?useSSL=false&serverT
 
 ---
 
+
 ## 🗂️ Diagrama de clases UML
 
 El siguiente diagrama muestra la relación entre entidades, DTOs y usuarios:
@@ -116,29 +161,6 @@ El siguiente diagrama muestra la relación entre entidades, DTOs y usuarios:
 📄 Ver imagen: `diagrama de clases UML.png`
 
 ---
-
-## 🛠 Pasos para correr en local
-
-```bash
-# Backend
-cd backend
-./mvnw spring-boot:run # usa JDK 21
-
-# Frontend
-cd ../frontend
-# abre index.html o usa un live server
-
-# Funcionalidad
-1. Logearse como administrador con credenciales mencionadas arribas
- [Master data -> productos/clientes se generan por código cada vez que se corre el sistema
- Transcional data -> órdenes se generan por cada compra generada en order/order_line]
-4. Para generar una orden de compra -> ir al `index.html`, agregar en el carrito y luego comprar
-5. Para visualizar ordenes generadas -> ir a `gestion.html` opción ordenes
-6. Ahí se puede operar sobre `PRODUCTOS` y `ORDENES` con operacion CRUD
-```
-
----
-
 ## 📦 Mejoras futuras
 
 - JWT y refresh tokens
