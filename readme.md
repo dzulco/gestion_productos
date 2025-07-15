@@ -12,7 +12,7 @@ Proyecto de e‑commerce básico construido con **Java 21 / Spring Boot 3** (
 - Endpoints REST para **Product**, **Order** y **Client**
 - Seguridad con Spring Security (HTTP Basic)
 - DTOs para exponer entidades ( request y response - uso de Records, mapper)
-- Validación de stock y errores claros (Http status code, global advice excepcions)
+- Validación de stock y errores claros (Http status code, Global Exception Handling)
 - Persistencia MySQL (con JPA)
 - Documentación con Swagger UI (`/swagger-ui.html`)
 
