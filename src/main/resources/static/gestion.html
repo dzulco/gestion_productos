@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="/css/gestion.css" />
+</head>
+<body>
+
+<header>
+    <h1>Panel Administrador</h1>
+    <div id="welcomeUser">Usuario: ...</div>
+    <button id="btnBack">Volver al ecommerce</button>
+</header>
+
+<nav>
+    <button id="btnProducts">Productos</button>
+    <button id="btnOrders">Órdenes</button>
+</nav>
+
+<section id="sectionProducts">
+    <form id="productForm">
+        <h2>CRUD Productos</h2>
+        <input type="hidden" id="productId" />
+        <label>Nombre<br /><input type="text" id="name" required /></label>
+        <label>Precio<br /><input type="number" step="0.01" id="price" required /></label>
+        <label>Stock<br /><input type="number" id="stock" required /></label>
+        <label>Descripción<br /><textarea id="description" required></textarea></label>
+        <label>URL de imagen<br /><input type="url" id="image" required /></label>
+        <button type="submit">Guardar Producto</button>
+    </form>
+
+    <div class="message" id="msgProduct"></div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+    </table>
+</section>
+
+<section id="sectionOrders" style="display:none;">
+    <form id="orderForm">
+        <h2>CRUD Órdenes</h2>
+        <input type="hidden" id="orderId" />
+        <label>ID Cliente<br /><input type="number" id="clientId" required /></label>
+        <label>Líneas de orden (JSON)<br /><textarea id="orderLines" required placeholder='[{"productId":1,"quantity":2}]'></textarea></label>
+        <button type="submit">Guardar Orden</button>
+    </form>
+
+    <div class="message" id="msgOrder"></div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Lineas</th>
+            <th>Estado</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody id="orderList"></tbody>
+    </table>
+</section>
+
+<script src="/js/gestion.js" defer></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mostrar el usuario logueado (desde localStorage)
+        const username = localStorage.getItem('username') || 'Invitado';
+        document.getElementById('welcomeUser').textContent = 'Usuario: ' + username;
+
+        // Botón para volver al ecommerce
+        document.getElementById('btnBack').addEventListener('click', () => {
+            window.location.href = '/index.html'; // Cambia a la URL real del ecommerce
+        });
+    });
+</script>
+
+</body>
+</html>

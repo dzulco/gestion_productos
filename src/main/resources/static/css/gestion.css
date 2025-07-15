@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fefefe;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+#welcomeUser {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+button#btnBack {
+    padding: 6px 12px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+nav {
+    margin-bottom: 15px;
+}
+
+nav button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+section {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #999;
+}
+
+th, td {
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.message {
+    margin-top: 8px;
+    color: green;
+    font-weight: bold;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="url"],
+form textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 3px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 1em;
+    cursor: pointer;
+}

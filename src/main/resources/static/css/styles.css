@@ -1,0 +1,128 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* bg-light en Bootstrap */
+    z-index: 1100; /* por encima del sidebar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100px;
+    padding: 1rem;
+    display: flex; /* para mantener flex layout */
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+body {
+    padding-top: 100px;
+}
+
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Oculto por defecto */
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1040;
+}
+
+.cart-overlay.show {
+    display: block;
+}
+
+.cart-items > div {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-items .item-info {
+    flex-grow: 1;
+}
+
+.cart-items button.remove-item {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+/* carrito sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* oculto por defecto */
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+/* fondo overlay cuando sidebar abierto */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1040;
+}
+
+.cart-overlay.show {
+    display: block;
+}
+
+/* estilos items carrito */
+.cart-items > div {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-items .item-info {
+    flex-grow: 1;
+}
+
+.cart-items button.remove-item {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
