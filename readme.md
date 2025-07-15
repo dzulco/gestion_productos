@@ -65,7 +65,7 @@ frontend/
 
 ## 🔐 Configuración de seguridad y BD
 
-1. Crea el archivo \`\` en la raíz del proyecto backend con:
+1. Crea el archivo `.env` en la raíz del proyecto backend con:
 
 ```dotenv
 SPRING_DATASOURCE_PASSWORD=root
