@@ -65,7 +65,13 @@ frontend/
 
 ## 🔐 Configuración de seguridad y BD
 
-1. Crea el archivo `.env` en la raíz del proyecto backend con:
+1. Autenticación de usuarios:
+```
+ROLE_ADMIN = admin / pass: admin123 --> Puede acceder a página de administrator `gestion.html`
+ROLE_USER = user / pass: user123 --> Solo para poder comprar en la página principal `index.html`
+```
+
+2. Crear el archivo `.env` en la raíz del proyecto backend con:
 
 ```dotenv
 SPRING_DATASOURCE_PASSWORD=root
@@ -73,13 +79,16 @@ SPRING_DATASOURCE_USER=root
 SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3307/techlabdb?useSSL=false&serverTimezone=UTC
 ```
 
-2. Tu `application.properties` debe leer esas variables, por ejemplo:
+3. Tu `application.properties` debe leer esas variables, por ejemplo:
 
 ```properties
 spring.datasource.url=${SPRING_DATASOURCE_URL}
 spring.datasource.username=${SPRING_DATASOURCE_USER}
 spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
 ```
+
+
+
 
 ---
 
