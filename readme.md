@@ -105,7 +105,7 @@ Abrir `index.html` directamente en el navegador o utilizar una extensión como *
 
 ---
 
-## 🚀 Como usar la aplicación
+## 🔍 Como usar la aplicación
 
 1. 🔐 Iniciar sesión como **administrador** usando las credenciales mencionadas más arriba.
 
